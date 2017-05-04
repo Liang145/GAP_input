@@ -1,0 +1,84 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<base href="<%=basePath%>">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>用户登录</title>
+<link rel="stylesheet" href="bs/css/bootstrap.min.css" />
+<link rel="stylesheet" href="public/css/public.css" />
+<link rel="stylesheet" href="login/css-login/login.css" />
+<link rel="stylesheet" href="public/css/components.css" />
+<script src="jquery/jquery.1.9.1.min.js"></script>
+<script src="bs/js/bootstrap.min.js"></script>
+
+
+<!--[if lt IE 7]>
+<script src="js/ie6png.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+	function flashImg(object) {
+		object.src = "verifyCode/" + Math.random();
+	};
+	$(document).ready(function() {
+		flashImg(document.getElementById("img"));
+
+	});
+</script>
+
+</head>
+<body>
+
+	<div class="all">
+		<div class="loginWrap">
+			<div class="header">登录：</div>
+			<form class="form" action="login/login" 
+				method="post" id="form">
+			 
+            
+        		<input type="text" class="form-control username" placeholder="账号："
+					name="form.user_name" value="${form.user_name}"/>
+				<input type="password" class="form-control password"
+					placeholder="密码：" name="form.password" value="${form.password}"/>
+				<div class="verifyWrap">
+					<input type="text" class="form-control verify" placeholder="验证码："
+						name="verifyCode" /> <img id="img" src="" alt=""
+						class="verify-img" title="点击刷新"
+						onclick="javascipt:flashImg(this);" />
+				</div>
+				  
+				<input type="submit" class="form-control btn btn-wx submit"
+					value="登录" />
+					
+			</form>
+
+	
+			<!-- 2013.12.30新增登陆错误信息框 开始 -->
+			
+			
+				<div class="errorInfo">
+					${errinfo}
+				</div>
+
+			
+			<!-- 2013.12.30新增登陆错误信息框 结束 -->
+		</div>
+		<!--  
+		<img id="verifyImg" src="verifyCode.action" /></span> <span
+			class="changeVerify"> 
+		<a href="#"
+			onclick="javascript:$('#verifyImg').attr('src','verifyCode.action?random='+Math.random());return false;">换一张</a></span>
+
+		-->
+	</div>
+</body>
+</html>

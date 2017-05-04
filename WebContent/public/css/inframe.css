@@ -1,0 +1,64 @@
+body{
+	/*width: 96%;
+	margin-left: 2%;*/
+	padding: 16px 2% 0 2%;
+}
+
+.clear{
+	clear: both;
+}
+
+#demo{
+	width: 100%;
+	margin-top: 0px;
+}
+h3.inner_title{
+	font-family: "微软雅黑", "宋体";
+}
+.add_user, .log_output, .log_input, .log_del{
+	// margin-top: 12px;
+	margin-bottom: 12px;
+	margin-right: 8px;
+}
+
+.breadcrumb{
+	border-radius: 0;
+	border: 1px solid #BFBFBF;
+}
+.user_form{
+	background-color: #f1f1f1;
+	padding: 20px;
+	border: 1px solid #BFBFBF;
+}
+
+.input_file{
+	line-height: 27px;
+	height: 27px;
+	vertical-align: bottom;
+	position: relative;
+	top: 3px;
+}
+
+.btn-wx{
+	background-color: #5aaa4b;
+	background-image: -moz-linear-gradient(top,#60b452 0,#56a447 100%);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#60b452),to(#56a447));
+	background-image: -webkit-linear-gradient(top,#60b452 0,#56a447 100%);
+	background-image: -o-linear-gradient(top,#60b452 0,#56a447 100%);
+	background-image: linear-gradient(to bottom,#60b452 0,#56a447 100%);
+	border-color: #3d810c;
+	color: #fff;
+	padding-left: 36px;
+	padding-right: 36px;
+}
+.btn-wx:hover{
+	background-color:#53a046;
+	background-image:-moz-linear-gradient(top,#5aab4d 0,#4f9841 100%);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#5aab4d),to(#4f9841));
+	background-image:-webkit-linear-gradient(top,#5aab4d 0,#4f9841 100%);
+	background-image:-o-linear-gradient(top,#5aab4d 0,#4f9841 100%);
+	background-image:linear-gradient(to bottom,#5aab4d 0,#4f9841 100%);
+	box-shadow:0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.3);
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.3);
+	color:#fff
+}

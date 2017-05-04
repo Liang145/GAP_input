@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+         http://www.springframework.org/schema/mvc    
+      http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+      "
+	xmlns:mvc="http://www.springframework.org/schema/mvc" >
+
+	<!-- 自动加载bean 使用 @Autowired 标签 -->
+	<!-- 在下面scan中已经实现声明，无需显式声明 <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" 
+		/> -->
+
+
+
+	<!-- 使用 annotation 自动注册Controller bean,并检查@Controller注解已被注入 -->
+	<context:component-scan base-package="com.jet.vframe.**.controller"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<mvc:default-servlet-handler />
+	<!-- -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/admin/**" />
+			<bean class="com.jet.vframe.sys.security.filter.SecurityInterceptor"></bean>
+		</mvc:interceptor>
+	
+
+	</mvc:interceptors>
+
+
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+			</bean>
+
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	    <!-- 指定自己定义的validator -->  
+    <mvc:annotation-driven validator="validator"/>  
+      
+    <!-- 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册-->  
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">  
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>  
+        <!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->  
+        <property name="validationMessageSource" ref="messageSource"/>  
+    </bean>  
+      
+    <!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->  
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+        <property name="basenames">  
+            <list>  
+                <!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找  -->  
+                <value>classpath:messages</value>  
+                <!--  
+                <value>classpath:org/hibernate/validator/ValidationMessages</value>  
+                -->
+            </list>  
+        </property>  
+        <property name="useCodeAsDefaultMessage" value="false"/>  
+        <property name="defaultEncoding" value="UTF-8"/>  
+        <property name="cacheSeconds" value="60"/>  
+    </bean>
+
+
+	<!-- HandlerMapping <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" 
+		/> -->
+
+	<!-- HandlerAdapter <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" 
+		/> -->
+	<!-- ViewResolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="com.jet.vframe.sys.upload.MyMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="10000000000" />
+	</bean>
+
+
+	<!-- 默认路径是 WEB-INF/。。 classpath表示src/.. 加载hibernate 配置文件 <import resource="classpath:spring-hibernate.xml" 
+		/> -->
+	<!-- 默认路径是 WEB-INF/。。 classpath表示src/.. 加载src下所有beans-*文件 -->
+	<!-- <import resource="classpath:com/jet/vframe/**/spring-bean-*.xml" /> -->
+</beans>

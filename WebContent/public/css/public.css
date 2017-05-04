@@ -1,0 +1,45 @@
+body{
+
+}
+body,input,textarea,select{
+	color:#333;
+}
+body,h1,h2,h3,h4,p,ul,ol{
+	margin:0;
+	font-family:"微软雅黑" ,"宋体", arial;
+}
+ul,ol{
+	padding-left:0; 
+	list-style-type:none;
+}
+/*image with no-border*/
+img{border:0;}
+.clear{
+	clear: both;
+}
+
+.my-alert{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	box-shadow: 0px 0px 20px #aaa;
+	/*display: none;*/
+	z-index: 99;
+}
+.my-alert.alert-success{
+	box-shadow: 0px 0px 20px #86AA71;
+}
+.my-alert.alert-danger{
+	box-shadow: 0px 0px 20px #B79090;
+}
+.my-alert .close-alert{
+	position: absolute;
+	right: 30px;
+	background-color: transparent;
+	border: 0;
+	font-size: 20px;
+}
+.my-alert strong{
+	font-size: 22px;
+}

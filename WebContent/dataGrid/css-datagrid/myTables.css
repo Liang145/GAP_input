@@ -1,0 +1,86 @@
+body{
+	font-family: '微软雅黑', '宋体', Arial;
+	background-color: #D5D6DB;
+}
+#demo{
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 20px;
+	border: 1px solid #BFBFBF;
+}
+.dataTables_length input{
+	border: 1px solid #ddd;
+}
+.dataTables_filter input{
+	border: 1px solid #ddd;
+}
+
+.myCheckbox{
+	
+}
+
+table{
+	table-layout:fixed;
+}
+tbody tr td{
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	overflow: hidden;
+	height: 20px;
+}
+
+tbody tr:hover td{
+	text-overflow: ellipsis;
+	white-space:normal;
+	overflow: hidden;
+	word-break:break-all;
+}
+
+.ui-toolbar{
+	margin: 0;
+	background-color: #e3e3e3;
+	border: 0;
+	border-bottom: 1px solid #D5D6DB;
+	background-image: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 12px !important;
+}
+.ui-toolbar label{
+	margin-bottom: 0;
+}
+.ui-toolbar .dataTables_info{
+	padding-top: 0;
+}
+.paging_full_numbers{
+	height: 36px;
+	line-height: 36px;
+	padding-top: 4px;
+}
+
+table.dataTable thead th{
+	border: 0;
+	border-bottom: 2px solid #282828;
+	background-color: #404040;
+	cursor: default;
+	color: #fff;
+	text-align: center;
+}
+table.dataTable thead th:focus{
+	border: 0;
+	border-bottom: 2px solid #282828;
+}
+table.dataTable tr{
+	height: 64px;
+	border-bottom: 1px solid #DDD;
+}
+table.dataTable tr.odd {
+	background-color: #f1f1f1;
+}
+table.dataTable tr.even {
+	background-color: #f1f1f1;
+}

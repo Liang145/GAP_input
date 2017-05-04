@@ -1,0 +1,47 @@
+body{
+	font-family: 'Î¢ÈíÑÅºÚ', 'ËÎÌå', Arial;
+	background-color: #D5D6DB;
+}
+#demo{
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 20px;
+	border: 1px solid #BFBFBF;
+}
+.dataTables_length input{
+	border: 1px solid #ddd;
+}
+.dataTables_filter input{
+	border: 1px solid #ddd;
+}
+.ui-toolbar{
+	margin: 0;
+	background-color: #D5D6DB;
+	border: 0;
+	border-bottom: 1px solid #D5D6DB;
+	border-radius: 0;
+	background-image: none;
+}
+
+table.dataTable thead th{
+	border: 0;
+	border-bottom: 2px solid #282828;
+	background-color: #404040;
+	cursor: default;
+	color: #fff;
+	text-align: center;
+}
+table.dataTable thead th:focus{
+	border: 0;
+	border-bottom: 2px solid #282828;
+}
+table.dataTable tr{
+	height: 64px;
+	border-bottom: 1px solid #DDD;
+}
+table.dataTable tr.odd {
+	background-color: #f1f1f1;
+}
+table.dataTable tr.even {
+	background-color: #f1f1f1;
+}

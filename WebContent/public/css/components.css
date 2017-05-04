@@ -1,0 +1,129 @@
+/* line 2, components.less */
+.welcomeWrap .panel {
+  border-color: #ccc;
+}
+/* line 5, components.less */
+.welcomeWrap .panel .panel-heading {
+  color: #505050;
+  background: #dddddd;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #fafafa));
+  background: -ms-linear-gradient(bottom, #dddddd, #fafafa);
+  background: -moz-linear-gradient(center bottom, #dddddd 0%, #fafafa 100%);
+  background: -o-linear-gradient(bottom, #dddddd, #fafafa);
+  filter: progid:dximagetransform.microsoft.gradient(startColorStr='#4d5b76', EndColorStr='#6c7a95');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa',EndColorStr='#dddddd')";
+  display: block;
+  padding-left: 1em;
+  border-top: 1px solid #fff;
+  outline: none;
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: bold;
+}
+/* line 24, components.less */
+.welcomeWrap .form-test {
+  width: 80%;
+  margin: 20px auto;
+}
+/* line 28, components.less */
+.welcomeWrap .form-test h3 {
+  line-height: 3em;
+}
+/* line 32, components.less */
+.welcomeWrap .form-test input[type="button"],
+.welcomeWrap .form-test input[type="submit"],
+.welcomeWrap .form-test input[type="reset"],
+.welcomeWrap .form-test input[type="file"]::-webkit-file-upload-button,
+.welcomeWrap .form-test button {
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  padding: 2px 6px 3px;
+  border: 2px outset buttonface;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background-color: buttonface;
+  box-sizing: border-box;
+}
+/* line 48, components.less */
+.welcomeWrap .form-test .btn-wx {
+  background-color: #5aaa4b;
+  background-image: -moz-linear-gradient(top, #60b452 0, #56a447 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#60b452), to(#56a447));
+  background-image: -webkit-linear-gradient(top, #60b452 0, #56a447 100%);
+  background-image: -o-linear-gradient(top, #60b452 0, #56a447 100%);
+  background-image: linear-gradient(to bottom, #60b452 0, #56a447 100%);
+  border-color: #3d810c;
+  color: #fff;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+/* line 59, components.less */
+.welcomeWrap .form-test .btn-wx:hover {
+  background-color: #53a046;
+  background-image: -moz-linear-gradient(top, #5aab4d 0, #4f9841 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5aab4d), to(#4f9841));
+  background-image: -webkit-linear-gradient(top, #5aab4d 0, #4f9841 100%);
+  background-image: -o-linear-gradient(top, #5aab4d 0, #4f9841 100%);
+  background-image: linear-gradient(to bottom, #5aab4d 0, #4f9841 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+/* line 71, components.less */
+.welcomeWrap .form-test .btn-default {
+  background-color: #f4f4f4;
+  background-image: -moz-linear-gradient(top, #f9f9f9 0, #f0f0f0 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#f0f0f0));
+  background-image: -webkit-linear-gradient(top, #f9f9f9 0, #f0f0f0 100%);
+  background-image: -o-linear-gradient(top, #f9f9f9 0, #f0f0f0 100%);
+  background-image: linear-gradient(to bottom, #f9f9f9 0, #f0f0f0 100%);
+  border-color: #c3c3c3;
+  color: #000;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+/* line 82, components.less */
+.welcomeWrap .form-test .btn-default:hover {
+  background-color: #f8f8f8;
+  background-image: -moz-linear-gradient(top, #f9f9f9 0, #f8f8f8 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#f8f8f8));
+  background-image: -webkit-linear-gradient(top, #f9f9f9 0, #f8f8f8 100%);
+  background-image: -o-linear-gradient(top, #f9f9f9 0, #f8f8f8 100%);
+  background-image: linear-gradient(to bottom, #f9f9f9 0, #f8f8f8 100%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+/* line 98, components.less */
+.welcomeWrap .form-test .btn-disabled {
+  background-color: #d1d1d1;
+  background-image: -moz-linear-gradient(top, #d1d1d1 0, #d1d1d1 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d1d1d1), to(#d1d1d1));
+  background-image: -webkit-linear-gradient(top, #d1d1d1 0, #d1d1d1 100%);
+  background-image: -o-linear-gradient(top, #d1d1d1 0, #d1d1d1 100%);
+  background-image: linear-gradient(to bottom, #d1d1d1 0, #d1d1d1 100%);
+  border-color: #cacaca;
+  color: #eee;
+  cursor: default;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+/* line 110, components.less */
+.welcomeWrap .form-test .btn-disabled:hover {
+  background-color: #d1d1d1;
+  background-image: -moz-linear-gradient(top, #d1d1d1 0, #d1d1d1 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d1d1d1), to(#d1d1d1));
+  background-image: -webkit-linear-gradient(top, #d1d1d1 0, #d1d1d1 100%);
+  background-image: -o-linear-gradient(top, #d1d1d1 0, #d1d1d1 100%);
+  background-image: linear-gradient(to bottom, #d1d1d1 0, #d1d1d1 100%);
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  color: #eee;
+}

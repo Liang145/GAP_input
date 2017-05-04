@@ -1,0 +1,87 @@
+/* line 1, login.less */
+body {
+  line-height: 1.4;
+  background: #b7a38b url("../images-login/bg_home.jpg") 0 0 no-repeat;
+}
+/* line 5, login.less */
+body,
+input,
+textarea,
+select {
+  font-size: 100%;
+  color: #333;
+}
+/* line 11, login.less */
+.all .loginWrap {
+  width: 360px;
+  height: 480px;
+  background-color: #fef5f0;
+  margin: 50px auto 0 auto;
+  border-radius: 11px;
+  -webkit-box-shadow: 0px 20px 100px #B99383;
+  box-shadow: 0px 20px 100px #B99383;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -260px;
+  margin-left: -180px;
+}
+/* line 26, login.less */
+.all .loginWrap .header {
+  background: transparent url("../images-login/header_bg.png") 0 0 no-repeat;
+  width: 360px;
+  height: 183px;
+  font-size: 0;
+  text-indent: -9999px;
+}
+/* line 34, login.less */
+.all .loginWrap input.username,
+.all .loginWrap input.password,
+.all .loginWrap input.verify,
+.all .loginWrap .userType {
+  width: 75%;
+  background-color: #DACCBE;
+  color: #64584c;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+}
+/* line 41, login.less */
+.all .loginWrap input.username.password,
+.all .loginWrap input.password.password,
+.all .loginWrap input.verify.password,
+.all .loginWrap .userType.password,
+.all .loginWrap input.username.verify,
+.all .loginWrap input.password.verify,
+.all .loginWrap input.verify.verify,
+.all .loginWrap .userType.verify {
+  margin-top: 18px;
+}
+/* line 45, login.less */
+.all .loginWrap div.verifyWrap {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+}
+/* line 50, login.less */
+.all .loginWrap div.verifyWrap input.verify {
+  width: 150px;
+  margin: 0;
+  display: inline-block;
+}
+/* line 55, login.less */
+.all .loginWrap div.verifyWrap .verify-img {
+  width: 100px;
+  height: 34px;
+  display: inline-block;
+}
+/* line 62, login.less */
+.all .loginWrap input.submit {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  display: block;
+}

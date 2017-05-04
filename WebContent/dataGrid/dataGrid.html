@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>dataTables测试</title>
+	<link rel="stylesheet" href="css-datagrid/jquery.dataTables.css" />
+	<link rel="stylesheet" href="css-datagrid/demo_table_jui.css" />
+	<link rel="stylesheet" href="css-datagrid/themes/myDataTables/jquery-ui-1.9.2.custom.css" />
+	<link rel="stylesheet" href="css-datagrid/myTables.css" /><!-- 自己写的样式表 -->
+	<script src="../js/jquery.1.9.1.min.js"></script>
+	<script src="js-datagrid/jquery.dataTables.min.js"></script>
+
+	<script>
+$(document).ready(function() {
+	$('#demo').html( '<table class="display" id="example"></table>' );
+
+	var inputTdHeader = "<input type='checkbox' class='myCheckbox_header' />";
+	var inputTd = "<input type='checkbox' class='myCheckbox' />";
+
+	$('#example').dataTable( {
+		"bJQueryUI": true, // 使用自定义主题
+		"aoColumns": [ // 定义表头信息
+			{ "sTitle": inputTdHeader, "sClass": "center",  },
+			{ "sTitle": "表头1", "asSorting": [ "asc" ] }, // asSorting为排序控制，此列固定为正序排序，不可点击此列切换
+			{ "sTitle": "表头2", "asSorting": [ "desc", "asc" ] }, // 此列点一次倒序，点第二次正序，点第三次倒序
+			{ "sTitle": "表头3", "asSorting": [ "desc", "asc", "asc" ] }, // 此列点一次倒序，点第二次正序，点第三次还是正序
+			{ "sTitle": "表头4", "sClass": "center" }, // sClass用于控制文本对齐方式
+			{
+				"sTitle": "表头5",
+				"sClass": "center",
+				"fnRender": function(obj) {
+					var sReturn = obj.aData[ obj.iDataColumn ];
+					if ( sReturn == "A" ) {
+						sReturn = "<b>A</b>";
+					}
+					return sReturn;
+				}
+			},
+			{"sTitle": "表头6"}
+		],
+		"aaData": [ //定义表格内数据
+			/* Reduced data set */
+			[ inputTd, "Trident", "Internet Explorer 4.0文本超长怎么办？文本超长怎么办？文本超长怎么办？", "Win 95+", 4, "X", "test for width" ],
+			[ inputTd, "Trident", "Internet Explorer 5.0", "Win 95+", 5, "C", "test for width" ],
+			[ inputTd, "Trident", "Internet Explorer 5.5文本超长怎么办？文本超长怎么办？文本超长怎么办？", "Win 95+文本超长怎么办？文本超长怎么办？文本超长怎么办？", 5.5, "A", "test for width" ],
+			[ inputTd, "Trident", "Internet Explorer 6.0", "Win 98+", 6, "A", "test for width" ],
+			[ inputTd, "Trident", "Internet Explorer 7.0", "Win XP SP2+", 7, "A", "test for width" ],
+			[ inputTd, "Gecko", "Firefox 1.5", "Win 98+ / OSX.2+", 1.8, "A", "test for width" ],
+			[ inputTd, "Gecko", "Firefox 2", "Win 98+ / OSX.2+", 1.8, "A", "test for width" ],
+			[ inputTd, "Gecko", "Firefox 3", "Win 2k+ / OSX.3+", 1.9, "A", "test for width" ],
+			[ inputTd, "Webkit", "Safari 1.2", "OSX.3", 125.5, "A", "test for width" ],
+			[ inputTd, "Webkit", "Safari 1.3", "OSX.3", 312.8, "A", "test for width" ],
+			[ inputTd, "Webkit", "Safari 2.0", "OSX.4+", 419.3, "A", "test for width" ],
+			[ inputTd, "Webkit", "Safari 3.0", "OSX.4+", 522.1, "A", "test for width" ]
+		],
+		"aaSorting": [
+			[ 4, "desc" ]
+		], // 以第 5 列倒序排列
+		"aoColumnDefs": [ // 用于指定某一列的设置
+			{ "bSearchable": false, "bVisible": true, "aTargets": [ 2 ] },
+			{ "bVisible": true, "aTargets": [ 3 ] }
+			 // bSearchable：是否可搜索；bVisible：是否可见；aTargets：哪一列
+		],
+		"bPaginate": true, // 翻页功能，默认为true
+		"bSort": true, // 排序功能，默认为true
+		"bInfo": true, // 页脚信息，默认为true
+		"sPaginationType": "full_numbers", // 分页样式，默认是两个箭头，full_numbers是数字显示
+		"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]], // 每页显示数量下拉框内容
+		"oLanguage": { // 修改语言
+			"sLengthMenu": "每页显示 _MENU_条",
+			"sZeroRecords": "没有找到符合条件的数据",
+			"sProcessing": "&lt;img src=’./loading.gif’ /&gt;",
+			"sInfo": "当前第 _START_ - _END_ 条　共计 _TOTAL_ 条",
+			"sInfoEmpty": "木有记录",
+			"sInfoFiltered": "(从 _MAX_ 条记录中过滤)",
+			"sSearch": "搜索：",
+			"oPaginate": {
+				"sFirst": "首页",
+				"sPrevious": "前一页",
+				"sNext": "后一页",
+				"sLast": "尾页"
+			}
+		}
+
+
+	} );
+
+	// 列宽控制函数定义
+	function widthControl (widthNum) {
+		$("thead th:eq(0)").css('width', '32px');
+		$("thead th:eq(0) .DataTables_sort_wrapper").css('padding-right', '11px');
+		$("thead th:eq(0) .myCheckbox_header").next('.DataTables_sort_icon').css('display', 'none');
+		for (var i = 1; i <= widthNum.length; i++) {
+			$("thead th:eq("+i+")").css('width', widthNum[i-1]);
+		};
+	};
+
+	// 列宽控制函数引用
+	widthControl(['10%', '20%', '30%', '100px', '10%', '20%']);
+	// 说明：第一列是checkbox，我在上面设置了固定32px的宽度，其余剩下几列，这里就写几个参数。单位可以是百分比或是px等任何CSS可以识别的单位。
+
+	// 全选功能
+	$(".myCheckbox_header").click(function() {
+		// alert($(this).attr('checked'));
+		$(".myCheckbox").attr("checked", 'true');
+	});
+
+});
+	</script>
+</head>
+<body>
+
+<div id="demo">
+	
+</div>
+
+</body>
+</html>
